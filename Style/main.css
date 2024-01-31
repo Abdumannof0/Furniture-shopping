@@ -3,4 +3,6 @@
 @import "./base/reset.css";
 @import "./base/vars.css";
 @import "./base/blocks/nav.css";
-@import "./base/blocks/card.css";/*# sourceMappingURL=main.css.map */
+@import "./base/blocks/card.css";
+@import "./base/blocks/cartTab.css";
+@import "./base/blocks/totalPrice.css";/*# sourceMappingURL=main.css.map */

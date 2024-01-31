@@ -1,0 +1,38 @@
+.list_cart {
+  overflow: auto;
+  .total_item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    text-align: center;
+    &:nth-child(even) {
+      background-color: #eee1;
+    }
+    .total_img {
+      max-width: 200px;
+    }
+    // .total_name {
+    // }
+    // .total_price {
+    // }
+    .quantity {
+      button {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        color: #333;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      &:nth-child(2) {
+        background: transparent;
+      }
+      //   .minus {
+      //   }
+      //   .plus {
+      //   }
+    }
+  }
+}
