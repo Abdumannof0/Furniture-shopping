@@ -5,6 +5,15 @@ body {
     margin: 0 auto;
     padding: 0 30px;
     font-family: "Poppins", sans-serif;
+    transition: transform 0.5s;
+  }
+  .show_cart {
+    .cart_tab {
+      inset: 0 0 0 auto;
+    }
+    & .container{
+      transform: translateX(-290px);
+    }
   }
   font-family: "Poppins", sans-serif;
 }

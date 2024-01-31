@@ -1,11 +1,12 @@
 .cart_tab {
   position: fixed;
-  inset: 0 0 0 auto;
+  inset: 0 -422px 0 auto;
   max-width: 422px;
   color: #eee;
   display: grid;
   grid-template-rows: 70px 1fr 70px;
   background-color: #333;
+  transition: 0.5s;
 }
 .cart_tab .cart_title {
   padding: 20px;

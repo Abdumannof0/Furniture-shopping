@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
 }
-.header .logo_basket .icon_basket {
+.header .logo_basket .icon_cart {
   width: 26px;
   height: auto;
 }
