@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-// Base
 @import "./base/base.css";
 @import "./base/reset.css";
 @import "./base/vars.css";
-
-// Blocks
 @import "./base/blocks/nav.css";
-@import "./base/blocks/card.css";
+@import "./base/blocks/card.css";/*# sourceMappingURL=main.css.map */
