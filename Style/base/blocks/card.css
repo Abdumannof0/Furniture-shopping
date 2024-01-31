@@ -1,1 +1,32 @@
-/*# sourceMappingURL=card.css.map */
+.list_product {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.list_product .item {
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgba(238, 238, 238, 0.9333333333);
+}
+.list_product .item .item_img {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 50px 20px rgba(0, 0, 0, 0.6));
+}
+.list_product .item .item_title {
+  font-weight: 500;
+}
+.list_product .item .item_price {
+  letter-spacing: 3px;
+  font-size: small;
+}
+.list_product .item .item_btn {
+  color: #fff;
+  background-color: #999;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 10px 0 0;
+  cursor: pointer;
+}/*# sourceMappingURL=card.css.map */

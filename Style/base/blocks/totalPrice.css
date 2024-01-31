@@ -1,0 +1,28 @@
+.list_cart {
+  overflow: auto;
+}
+.list_cart .total_item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  text-align: center;
+}
+.list_cart .total_item:nth-child(even) {
+  background-color: rgba(238, 238, 238, 0.0666666667);
+}
+.list_cart .total_item .total_img {
+  max-width: 200px;
+}
+.list_cart .total_item .quantity button {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  color: #333;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.list_cart .total_item .quantity:nth-child(2) {
+  background: transparent;
+}/*# sourceMappingURL=totalPrice.css.map */
