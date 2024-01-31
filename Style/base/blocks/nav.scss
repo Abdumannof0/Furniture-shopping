@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+  }
+  .logo_basket {
+    .icon_basket {
+      width: 26px;
+      height: auto;
+    }
+    & span {
+      position: absolute;
+      top: 10px;
+      right: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 10px;
+      border-radius: 50%;
+      width: 18px;
+      height: 20px;
+      background: red;
+    }
+  }
+}
