@@ -1,6 +1,9 @@
 .list_cart {
   overflow: auto;
 }
+.list_cart::-webkit-scrollbar {
+  width: 0;
+}
 .list_cart .total_item {
   display: grid;
   grid-template-columns: 70px 150px 50px 1fr;

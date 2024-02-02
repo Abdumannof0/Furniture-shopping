@@ -8,4 +8,13 @@ body .container {
   margin: 0 auto;
   padding: 0 30px;
   font-family: "Poppins", sans-serif;
+  transition: transform 0.5s;
+}
+html .show_cart .cart_tab,
+body .show_cart .cart_tab {
+  inset: 0 0 0 auto;
+}
+html .show_cart .container,
+body .show_cart .container {
+  transform: translateX(-340px);
 }/*# sourceMappingURL=base.css.map */
