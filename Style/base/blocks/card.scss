@@ -1,10 +1,12 @@
 .list_product {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 260px);
+  justify-content: center;
+  gap: 50px;
+  padding: 20px 0;
 
   .item {
-    max-width: 240px;
+    max-width: 260px;
     padding: 20px;
     text-align: center;
     border-radius: 20px;
