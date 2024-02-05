@@ -62,14 +62,20 @@ const addToCart = (product_id) => {
                 .quantity + 1;
     }
     addCartToHTML()
-    console.log(carts);
+    addCartToMemory()
+}
+addCartToMemory = () => {
+    localStorage.setItem('cart', JSON.stringify(carts))
 }
 
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
+    let totalQuantity = 0;
     if (carts.length > 0) {
         carts.forEach(cart => {
+            totalQuantity = totalQuantity + cart.quantity
             let newCart = document.createElement('div')
+            newCart.dataset.id = cart.product_id;
             newCart.classList.add('total_item')
             let positionProduct = listProducts
                 .findIndex((value) => value.id == cart.product_id)
@@ -80,17 +86,26 @@ const addCartToHTML = () => {
              <img src="${info.image}" alt="" />
          </div>
          <div class="total_name"></div>
-         <div class="total_price">$</div>
+         <div class="total_price">
+            $${info.price * cart.quantity} 
+         </div>
          <div class="quantity">
           <button class="minus">-</button>
-          <button>1</button>
+          <button>${cart.quantity}</button>
           <button class="plus">+</button>
         </div>
             `;
             listCartHTML.appendChild(newCart)
         })
     }
+    iconCartBtn.innerHTML = totalQuantity;
 }
+listCartHTML.addEventListener('click', (event) => {
+    let positionClick = event.target
+    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
+        
+    }
+})
 
 const initApp = () => {
     fetch('products.json')
@@ -98,6 +113,11 @@ const initApp = () => {
         .then(data => {
             listProducts = data;
             addDataToHTML()
+            // Get cart from Memory
+            if (localStorage.getItem('cart')) {
+                carts = JSON.parse(localStorage.getItem('cart'))
+                addCartToHTML()
+            }
         })
 }
 initApp()
