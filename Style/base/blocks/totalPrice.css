@@ -16,7 +16,7 @@
   background-color: rgba(238, 238, 238, 0.0666666667);
 }
 .list_cart .total_item .total_img {
-  max-width: 200px;
+  max-width: 100%;
 }
 .list_cart .total_item .quantity button {
   display: inline-block;
