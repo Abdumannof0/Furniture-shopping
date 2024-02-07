@@ -13,6 +13,17 @@
   margin: 0;
   font-weight: 300;
 }
+.cart_tab .list_cart {
+  display: flex;
+  flex-direction: column;
+}
+.cart_tab .list_cart .total_item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
 .cart_tab .btn {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

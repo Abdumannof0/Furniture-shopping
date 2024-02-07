@@ -6,11 +6,22 @@
   display: grid;
   grid-template-rows: 70px 1fr 70px;
   background-color: #333;
-  transition: .5s ;
+  transition: 0.5s;
   .cart_title {
     padding: 20px;
     margin: 0;
     font-weight: 300;
+  }
+  .list_cart {
+    display: flex;
+    flex-direction: column;
+    .total_item {
+      display: grid;
+      grid-template-columns: 70px 150px 50px 1fr;
+      gap: 10px;
+      text-align: center;
+      align-items: center;
+    }
   }
   .btn {
     display: grid;

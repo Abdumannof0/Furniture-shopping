@@ -38,7 +38,7 @@ const addDataToHTML = () => {
 listProductHTML.addEventListener('click', (event) => {
     const positionClick = event.target;
     if (positionClick.classList.contains('item_btn')) {
-        const product_id = positionClick.parentElement.dataset.id
+        const product_id = positionClick.parentElement.dataset.id;
         addToCart(product_id)
     }
 })
@@ -74,40 +74,68 @@ const addCartToHTML = () => {
     if (carts.length > 0) {
         carts.forEach(cart => {
             totalQuantity = totalQuantity + cart.quantity
-            let newCart = document.createElement('div')
-            newCart.dataset.id = cart.product_id;
+            let newCart = document.createElement('list_cart')
             newCart.classList.add('total_item')
+            newCart.dataset.id = cart.product_id;
             let positionProduct = listProducts
                 .findIndex((value) => value.id == cart.product_id)
             let info = listProducts[positionProduct]
             newCart.innerHTML =
                 `
-            <div class="total_img">
-             <img src="${info.image}" alt="" />
-         </div>
-         <div class="total_name"></div>
-         <div class="total_price">
-            $${info.price * cart.quantity} 
-         </div>
-         <div class="quantity">
-          <button class="minus">-</button>
-          <button>${cart.quantity}</button>
-          <button class="plus">+</button>
-        </div>
+                <div class="total_image">
+                    <img class="total_img" src="${info.image}" alt="" />
+                </div>
+                <div class="total_name">${info.name}</div>
+                <div class="total_price">$${info.price}</div>
+                <div class="quantity">
+                    <button class="minus">-</button>
+                    <button>1</button>
+                    <button class="plus">+</button>
+                </div>
             `;
             listCartHTML.appendChild(newCart)
         })
     }
     iconCartBtn.innerHTML = totalQuantity;
 }
+
 listCartHTML.addEventListener('click', (event) => {
-    let positionClick = event.target
-    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
-        
+    let positionClick = event.target;
+    if (positionClick.classList.contains('minus') ||
+        positionClick.classList.contains('plus')) {
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = 'minus'
+        if (positionClick.classList.contains('plus')) {
+            type = 'plus'
+        }
+        changeQuantity(product_id, type)
     }
 })
+const changeQuantity = (product_id, type) => {
+    let positionItemInCart = carts
+        .findIndex((value) => value.product_id == product_id)
+    if (positionItemInCart >= 0) {
+        switch (type) {
+            case 'plus':
+                carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
+                break;
+
+            default:
+                let valueChange = carts[positionItemInCart].quantity - 1;
+                if (valueChange > 0) {
+                    carts[positionItemInCart].quantity = valueChange;
+                } else {
+                    carts.splice(positionItemInCart, 1)
+                }
+                break;
+        }
+    }
+    addCartToMemory()
+    addCartToHTML()
+}
 
 const initApp = () => {
+    // Get data from JSON
     fetch('products.json')
         .then(res => res.json())
         .then(data => {
